@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingo Coach</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        #chat {
+            margin: 15px 0;
+        }
+        #chat div {
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 8px;
+            background: #f1f1f1;
+        }
+        input {
+            width: 70%;
+            padding: 8px;
+        }
+        button {
+            padding: 8px 14px;
+        }
+    </style>
+</head>
+<body>
+<h1>Lingo Coach</h1>
+
+<select id="lang">
+    <option>English</option>
+    <option>Kurdish</option>
+    <option>Persian</option>
+</select>
+
+<select id="level">
+    <option>beginner</option>
+    <option>intermediate</option>
+    <option>advanced</option>
+</select>
+
+<div id="chat"></div>
+
+<input id="text" placeholder="Write something..." onkeydown="if (event.key === 'Enter') send()">
+<button onclick="send()">Send</button>
+
+<script>
+function addMessage(text, color) {
+    const chat = document.getElementById("chat");
+    const div = document.createElement("div");
+    div.textContent = text;
+    if (color) div.style.background = color;
+    chat.appendChild(div);
+}
+
+function fakeReply(text, language) {
+    if (language === "Kurdish") {
+        return {
+            reply:"زور باشه! بو کوی چوویت؟",
+            corrections: [],
+            tip: "Kurdish tip: practice one new word every day."
+        };
+    }
+
+    if (language === "Persian") {
+        return {
+            reply: "جالبه! کجا رفتی؟",
+            corrections: [],
+            tip: "Persian tip: practice one new word every day."
+        };
+    }
+    return {
+        reply: "That sounds fun! Where did you go?",
+        corrections: [
+            {
+                original: text,
+                corrected: "I went to school",
+                explanation: "'Go' is irregular. The past tense is 'went'."
+            }
+        ],
+        tip: "Learn common irregular verbs."
+    };
+}
+
+function send() {
+    const input = document.getElementById("text");
+    const text = input.value;
+    if (text === "") return;
+
+    const language = document.getElementById("lang").value;
+
+    addMessage("You: " + text, "#dbeafe");
+
+    const result = fakeReply(text, language);
+
+    result.corrections.forEach(function (c) {
+        addMessage("Correction: " + c.original + "->" + c.corrected);
+        addMessage(c.explanation);
+    });
+
+    addMessage("Coach: " + result.reply);
+
+    if (result.tip) {
+        addMessage("Tip: " + result.tip);
+    }
+
+    input.value = "";
+}
+  </script>
+ </body>
+</html>
