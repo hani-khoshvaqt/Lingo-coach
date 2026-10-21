@@ -21,11 +21,11 @@ Open `index.html` in your browser. No installation is needed.
 
 ## Roadmap
 
-- Add a flask backend and connect it to the Claude API
+- Add a Flask backend and connect it to the Claude API
 - Save common mistakes in a database (SQLite)
-- Generate practice exercieses from the learner's past mistakes
+- Generate practice exercises from the learner's past mistakes
 - Deploy the app online
 
 ## Tech stack
 
-HTML, CSS, JavaScript(backend coming soon: Python, flask, Clauden API)
+HTML, CSS, JavaScript (backend coming soon: Python, flask, Claude API)
