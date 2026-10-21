@@ -1,7 +1,7 @@
 # Lingo Coach
 
 Lingo Coach is a language-practice chat app. The learner writes in English, Kurdish (Sorani) or Persian, and a tutor replies, corrects mistakes and gives a short learning tip.
-i built it because i have taught languages and speak English and Kurdish fluently. Kurdish especially has very few learning tools, so i wanted to make one.
+I built it because I have taught languages and speak English and Kurdish fluently. Kurdish especially has very few learning tools, so I wanted to make one.
 
 # Features
 
