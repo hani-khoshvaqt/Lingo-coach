@@ -15,7 +15,7 @@ I built it because I have taught languages and speak English and Kurdish fluentl
 
 The interface is finished. Replies are still simulated: the app returns a structured response (reply, correction, tip) from a function called `fakeReply`. The next step is to replace it with real replies from an AI model.
 
-## How to returns
+## How to run
 
 Open `index.html` in your browser. No installation is needed.
 
@@ -28,4 +28,4 @@ Open `index.html` in your browser. No installation is needed.
 
 ## Tech stack
 
-HTML, CSS, JavaScript (backend coming soon: Python, flask, Claude API)
+HTML, CSS, JavaScript (backend coming soon: Python, Flask, Claude API)
